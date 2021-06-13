@@ -1,0 +1,60 @@
+{
+    "name": "docker-lazydocker",
+    "displayName": "Docker Lazydocker",
+    "icon": "images/icon.png",
+    "description": "VSCode extension to run lazydocker.",
+    "version": "1.0.1",
+    "publisher": "sandipchitale",
+    "author": {
+        "name": "Sandip Chitale"
+    },
+    "maintainers": [
+        "Sandip Chitale <sandipchitale@gmail.com>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sandipchitale/docker-lazydocker"
+    },
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:docker-lazydocker.launch"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "configuration": {
+            "properties": {
+                "docker-lazydocker.lazydockerCommand": {
+                    "type": "string",
+                    "default": "lazydocker",
+                    "description": "Lazydocker executable"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "docker-lazydocker.launch",
+                "title": "Lazydocker",
+                "category": "Docker"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint . --ext .ts,.tsx",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.10",
+        "@types/vscode": "^1.32.0",
+        "@typescript-eslint/eslint-plugin": "^3.0.2",
+        "@typescript-eslint/parser": "^3.0.2",
+        "eslint": "^7.1.0",
+        "typescript": "^4.0.2"
+    }
+}
